@@ -1,1 +1,1 @@
-exicute
+one to one
