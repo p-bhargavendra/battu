@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: copy the files from diff path
+    copy: 
+        src: /opt/jenkins-2.222.4-1.1.noarch.rpm
+        dest: /opt
+  - name: installing jenkins
+    yum:
+        name: /opt/jenkins-2.222.4-1.1.noarch.rpm
+        state: present
+  - name: sercies starts
+    service:
+           name: jenkins
+           state: started  
